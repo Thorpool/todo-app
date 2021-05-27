@@ -1,0 +1,15 @@
+<div class="col-3 mx-auto mt-5">
+  <form action="" class="d-flex mb-3">
+    <input #messageInput class="form-control" type="text" placeholder="Tâche à faire" [formControl]="message">
+    <button type="submit" (click)="create()" [disabled]="!messageInput.value" class="btn btn-primary">+</button>
+  </form>
+
+  <ul *ngIf="todoList$" class="list-group">
+    <li *ngFor="let todo of todoList$" class="list-group-item d-flex list-group-item-secondary">
+      <input type="checkbox" [checked]="todo.checked" (change)="checked($event, todo.id)"  class="form-check-input me-2 check">
+      <span>{{todo.message}}</span>
+      <button type="button" class="btn-close" (click)="delete(todo.id)"></button>
+    </li>
+  </ul>
+</div>
+

@@ -1,0 +1,15 @@
+.check{
+  & + span{
+    flex: 1;
+  }
+  &:checked + span {
+  text-decoration: line-through;
+  }
+}
+
+button.delete{
+  background: transparent;
+  border: 0;
+  font-size: 17px;
+  color: gray;
+}
